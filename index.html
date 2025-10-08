@@ -1,0 +1,117 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <title>Replit</title>
+    <link href="style.css" rel="stylesheet" type="text/css" />
+  </head>
+
+  <body>
+    <div id="NavBar">
+      <div class="Links">
+        <a href="#section1">Inicio</a>
+        <a href="#section2">Projetos</a>
+        <a href="#section3">Sobre</a>
+      </div>
+    </div>
+
+    <section id="section1">
+      <div class="elements">
+        <div class="imagemOfc"></div>
+        <h1>Lucas Soeiro Martins</h1>
+        <h2>medium stack</h2>
+        <p>Faço todos os serviços</p>
+        <button id="Butao">veja meus produtos</button>
+      </div>53'
+    </section>
+
+    <section id="section2" style="background-color: #a9a9a9">
+      <div class="elements">
+        <div class="text2">
+          <h1>Projetos</h1>
+          <br />
+          <p>Alguns trabalho e projetos que desenvolvi:</p>
+          <br />
+          <br />
+        </div>
+        <div class="box">
+          <h2>🌐Portfólio Pessoal</h2>
+          <p>
+            Meu site de apresentação profissional<br />
+            com informações e projetos.
+          </p>
+          <a href="#" class="buttonBox">Ver projeto</a>
+        </div>
+
+        <div class="box">
+          <h2>🛒Loja Virtual</h2>
+          <p>
+            Protótipo e-commerce com <br />carrinho de compras em JavaScript.
+          </p>
+          <br />
+          <a href="#" class="buttonBox">Ver projeto</a>
+        </div>
+
+        <div class="box">
+          <h2>📊Dashboard de Dados</h2>
+          <p>
+            Painel interativo para<br />
+            visualização de métricas<br />
+            e gráficos.
+          </p>
+          <br />
+          <a href="#" class="buttonBox">Ver projeto</a>
+        </div>
+      </div>
+    </section>
+
+    <section id="section3" style="background-color: grey">
+      <div class="elements">
+        <h1>Contato</h1>
+        <p style="margin-bottom: 10px">
+          ser quiser o meu número me mande seu email
+        </p>
+        <form id = "whatsAppForm">
+          <input type="text" id="nome" name="nome" placeholder="nome" /><br />
+          <input type="email" id="email" name="email" placeholder="email" /><br />
+          <textarea
+            id="mensagem"
+            name="comentario"
+            rows="4"
+            cols="50"
+            placeholder="Digite sua mensagem"
+          ></textarea>
+          <br/>
+          <button class ="buttonCon">Enviar pro WhatsApp</button>
+        </form>
+
+        
+        <p class="negrito">me siga nas redes sociais</p>
+        <div id = "RedesSociais">
+          <a href = "https://www.youtube.com/">Youtube</a>
+          <a href = "https://www.instagram.com/">Instagram</a>
+          <a href = "https://www.facebook.com/?locale=pt_BR">Facebook</a>
+        </div>
+     </div>
+    </section>
+  </body>
+  <script>
+    document.getElementById("whatsAppForm").addEventListener("submit", function (e) {
+      e.preventDefault();
+      const nome = document.getElementById("nome").value;
+      const email = document.getElementById("email").value;
+      const mensagem = document.getElementById("mensagem").value;
+
+      if (nome === "" || email === "" || mensagem === "") {
+        alert("Por favor, preencha todos os campos.");
+        return; 
+      }
+      
+      const texto = `Olá, meu nome é ${nome} (${email}) e gostaria de falar: ${mensagem}`
+      const url = `https://wa.me/5527995761031?text=${encodeURIComponent(texto)}`
+
+      window.open(url, "_blank")
+    })
+  </script>
+</html>
